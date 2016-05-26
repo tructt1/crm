@@ -1,0 +1,2 @@
+F:\TFS_Adayroi\Mobile.CRM\Mobile.CRM\obj\Debug\Mobile.CRM.njsprojResolveAssemblyReference.cache
+F:\TFS_Adayroi\Mobile.CRM\Mobile.CRM\bin\Microsoft.NodejsTools.WebRole.dll

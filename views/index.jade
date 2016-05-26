@@ -1,0 +1,994 @@
+﻿extends layout
+
+block content
+    .campaigns.pill-bottle(style='padding-top: 44px;')
+        .pill.dynamic-pill(style='display: block;')
+            .wizard.campaigns
+                div
+                    .wizard-box
+                        ol(data-steps="5")
+                            li.current
+                                a.wizard-navigation-step(data-href='compose-tab')
+                                    span Compose
+                                    i.fa.fa-check
+                                i
+                            li.future.next
+                                a.wizard-navigation-step(data-href='schedule-tab')
+                                    span Delivery
+                                    i.fa.fa-check(style='display: none;')
+                                i
+                            li.future
+                                a.wizard-navigation-step(data-href='target-tab')
+                                    span Target Users
+                                    i.fa.fa-check(style='display: none;')
+                                i
+                            li.future
+                                a.wizard-navigation-step(data-href='conversion-tab')
+                                    span Conversions
+                                    i.fa.fa-check(style='display: none;')
+                                i
+                            li.future
+                                a.wizard-navigation-step(data-href='confirm-tab')
+                                    span Confirm
+                                    i.fa.fa-check(style='display: none;')
+                                i
+                .wizard-body
+                    #compose-tab.wizard-tab(style='display: block;')
+                        .row.wizard-step.compose-step
+                            div
+                                .span12.shadow-container
+                                    .data-box-header Campaign Name
+                                    .campaign-name-header.data-box.no-margin.allow-overflow
+                                        form.form-horizontal.campaigns-form.parsley-bound
+                                            fieldset
+                                                .control-group.thin
+                                                    input.campaign-name(type='text', placeholder='Enter Campaign Name')
+                            div
+                                .span12
+                                    .shadow-container
+                                        .data-box
+                                            .message-composition
+                                                .message-composer
+                                                    div
+                                                        .message-preview-area
+                                                            .data-box-section-header
+                                                                | Preview
+                                                                .panels
+                                                                    div
+                                                                        div
+                                                                            i.fa.fa-chrome.selected(title='Preview message for Chrome', data-href='web-push-chrome-preview')
+                                                                            i.fa.fa-firefox(title='Preview message for Firefox', data-href='web-push-firefox-preview')
+                                                                            i.fa.fa-safari(title='Preview message for Safari', data-href='web-push-safari-preview')
+                                                            .preview-holder
+                                                                .push-message-area.web-push-message-area
+                                                                    .web-push-chrome-preview.web-push-preview
+                                                                        img.web-push-desktop-background(width='452px', src='/images/Web_Push_Wire2x.png')
+                                                                        article
+                                                                            table
+                                                                                colgroup
+                                                                                    col(width='105px')
+                                                                                    col(width='250px')
+                                                                                    col
+                                                                                tbody
+                                                                                    tr
+                                                                                        td
+                                                                                            .chrome-placeholder-image(style='display: none;')
+                                                                                            img.chrome-left-image(src='https://appboy-images.com/appboy/communication/marketing/web_push_message_variations/images/573d3224dfc3b443ee58e5e3/7baaa91ff21bad06faa23080e22d86b43127fe5c/sixty_by_sixty.png?1463649863')
+                                                                                        td
+                                                                                            .chrome-title DEMO APPBOY
+                                                                                            .chrome-b xin chào, rất vui được gặp lại các bạn
+                                                                                            .chrome-via
+                                                                                                | example.com
+                                                                                        td
+                                                                                            .chrome-x x
+                                                                    .web-push-firefox-preview.web-push-preview(style='display: none;')
+                                                                        h4.stubby-header Select Operating System
+                                                                        select.preview-option-dropdown
+                                                                            option(value='mac') Mac OS X
+                                                                            option(value='windows') Windows
+                                                                        img.web-push-desktop-background(src='/images/Web_Push_Wire2x.png')
+                                                                        div
+                                                                            article
+                                                                                table
+                                                                                    colgroup
+                                                                                        col(width='54px')
+                                                                                        col(width='316px')
+                                                                                    tbody
+                                                                                        tr
+                                                                                            td
+                                                                                                img.firefox-left-image(src='https://dashboard.appboy.com/assets/dashboard/firefox-icon.png')
+                                                                                            td
+                                                                                                .firefox-right-image
+                                                                                                    img(src='https://appboy-images.com/appboy/communication/marketing/web_push_message_variations/images/573d3224dfc3b443ee58e5e3/7baaa91ff21bad06faa23080e22d86b43127fe5c/sixty_by_sixty.png?1463649863')
+                                                                                                .firefox-title DEMO APPBOY
+                                                                                                .firefox-via via example.com
+                                                                                                .firefox-b xin chào, rất vui được gặp lại các bạn
+                                                                        .firefox-windows(style='display: none;')
+                                                                            article
+                                                                                .firefox-windows-x.pull-right
+                                                                                    i.fa.fa-times
+                                                                                .firefox-windows-gear.pull-right
+                                                                                    i.fa.fa-gear
+                                                                                .firefox-windows-title DEMO APPBOY
+                                                                                img.firefox-windows-image(src='https://appboy-images.com/appboy/communication/marketing/web_push_message_variations/images/573d3224dfc3b443ee58e5e3/7baaa91ff21bad06faa23080e22d86b43127fe5c/sixty_by_sixty.png?1463649863')
+                                                                                .firefox-windows-b xin chào, rất vui được gặp lại các bạn
+                                                                                .firefox-windows-via
+                                                                                    | via example.com
+                                                                    .web-push-safari-preview.web-push-preview(style='display: none;')
+                                                                        img.web-push-desktop-background(src='/images/Web_Push_Wire2x.png')
+                                                                        div
+                                                                            article
+                                                                                table
+                                                                                    colgroup
+                                                                                        col(width='54px')
+                                                                                        col(width='316px')
+                                                                                        col
+                                                                                    tbody
+                                                                                        tr
+                                                                                            td
+                                                                                                img.safari-image(src='https://appboy-images.com/appboy/communication/marketing/web_push_message_variations/images/573d3224dfc3b443ee58e5e3/7baaa91ff21bad06faa23080e22d86b43127fe5c/sixty_by_sixty.png?1463649863')
+                                                                                            td
+                                                                                                .safari-title(data-bind='text: webTitle') DEMO APPBOY
+                                                                                                .safari-b(data-bind='text: webPushMessage') xin chào, rất vui được gặp lại các bạn
+                                                                .preview-helptext
+                                                                    | Actual rendering may not be identical to this preview depending on the user's environment.
+                                                            .preview-message-aborted(style='display: none;')
+                                                                | This message would not have been shown because of the abort_message tag. The tag was called with message "".
+                                                        .message-composition-area
+                                                            .data-box-section-header
+                                                                | Compose Web Push
+                                                                .panels
+                                                                    i.fa.fa-pencil.selected(title='Compose Message', data-href='compose-message')
+                                                                    i.fa.fa-gear(title='Additional Message Settings', data-href='setting-message')
+                                                            .compose-message.web-push-setting
+                                                                form.vertical-form.push-editor.parsley-bound
+                                                                    fieldset
+                                                                        .clearfix
+                                                                            .push-message-area.web-push-message-area
+                                                                                #templatable-element-11
+                                                                                    .composer-section.text-composer
+                                                                                        h4.stubby-header  Title 
+                                                                                        .title-area
+                                                                                            .textoverlay-wrapper(style='margin: 0px; padding: 0px; overflow: hidden; display: inline-block; position: relative;')
+                                                                                                .textoverlay(style='position: absolute; color: transparent; white-space: nowrap; word-wrap: break-word; margin: 0px 0px 9px; padding: 5px; font-family: helvetica, arial, sans-serif; font-weight: 400; font-size: 13px; top: 1px; right: 1px; bottom: 1px; left: 1px; background-color: rgb(255, 255, 255);') DEMO APPBOY
+                                                                                                input.web-title(type='text', style='position: relative; outline: 0px; background: transparent;')
+                                                                                            ul#parsley-id-2055.parsley-errors-list
+                                                                                            br
+                                                                                        h4.stubby-header.top-space Message
+                                                                                        .message-area
+                                                                                            .textoverlay-wrapper(style='margin: 0px; padding: 0px; overflow: hidden; display: inline-block; position: relative;')
+                                                                                                .textoverlay(style='position: absolute; color: transparent; white-space: pre-wrap; word-wrap: break-word; margin: 0px; padding: 4px 18px 4px 6px; font-family: helvetica, arial, sans-serif; font-weight: 400; font-size: 13px; top: 1px; right: 1px; bottom: 1px; left: 1px; width: 491px; background-color: rgb(255, 255, 255);') xin chào, rất vui được gặp lại các bạn
+                                                                                                textarea.push-message.web-push-message(style='position: relative; outline: 0px; margin: 0px; overflow-y: scroll; background: transparent;')                     
+                                                                                            ul#parsley-id-6605.parsley-errors-list
+                                                                                        div
+                                                                                    .composer-section.image-bar
+                                                                                        h4.stubby-header
+                                                                                            i.fa.fa-image
+                                                                                            | &nbsp;Image
+                                                                                        #web-push-composer-9.uploader-root
+                                                                                            .uploader-root.image-upload-with-library
+                                                                                                .image-upload-with-custom-url
+                                                                                                    button.btn.img-btn.pull-left
+                                                                                                        i.fa.fa-cloud-upload
+                                                                                                        | add image
+                                                                                    .composer-section
+                                                                                        h4.stubby-header
+                                                                                            i.fa.fa-hand-o-up
+                                                                                            | &nbsp;On Click Behavior
+                                                                                        select.uri-type
+                                                                                            option(value='URI') Redirect to Web URL
+                                                                                            option(value='DEEP_LINK') Deep Link Into Application
+                                                                                            option(value='NONE', selected) Opens App
+                                                                                        span.custom-uri-area
+                                                                                            span
+                                                                                                .textoverlay-wrapper(style='margin: 0px; padding: 0px; overflow: hidden; display: inline-block; position: relative;')
+                                                                                                    .textoverlay(style='position: absolute; color: transparent; white-space: pre-wrap; word-wrap: break-word; margin: 0px; padding: 4px 18px 4px 6px; font-family: helvetica, arial, sans-serif; font-weight: 400; font-size: 13px; top: 1px; right: 1px; bottom: 1px; left: 1px; width: 490px; background-color: rgb(255, 255, 255);')
+                                                                                                    textarea.web-custom-uri(style='position: relative; outline: 0px; margin: 0px; overflow-y: scroll; background: transparent;display: none;')
+                                                                                        .help-message(style='display: none;')
+                                                                                            p
+                                                                                            | Due to Apple limitations, click targets will be sent to Safari as http links, even if you enter an https URL. Be sure that your target URL redirects appropriately from http.
+                                                            .setting-message.web-push-setting(style='display: none')
+                                                                .composer-section.kvps
+                                                                    .add-new-kvp
+                                                                        h4.stubby-header
+                                                                            | Key/Value Pairs
+                                                                        span.add-with-select
+                                                                        span
+                                                                            button.btn.new-pair(type='button')
+                                                                                i.fa.fa-plus-circle
+                                                                                | &nbsp;Add New Pair
+                                                                    .help-message
+                                                                    .light-form-alert
+                                                                        | Warning: You have included duplicate keys in your list of Key / Value Pairs. Keys must be unique.
+                                                                    .key-values-area
+                                                                        ul.unstyled
+                                                                            li.kvp-104
+                                                                                i.key-value-icon.key-icon
+                                                                                .textoverlay-wrapper(style='margin: 0px; padding: 0px; overflow: hidden; display: inline-block; position: relative;')
+                                                                                    .textoverlay(style='position: absolute; color: transparent; white-space: nowrap; word-wrap: break-word; margin: 0px 10px 9px; padding: 5px; font-family: helvetica, arial, sans-serif; font-weight: 400; font-size: 13px; top: 1px; right: 1px; bottom: 1px; left: 1px; background-color: rgb(255, 255, 255);')
+                                                                                    input.key(type='text', style='position: relative; outline: 0px; background: transparent;')
+                                                                                i.key-value-icon.fa.fa-arrow-circle-right.fa-fw
+                                                                                .textoverlay-wrapper(style='margin: 0px; padding: 0px; overflow: hidden; display: inline-block; position: relative;')
+                                                                                    .textoverlay(style='position: absolute; color: transparent; white-space: nowrap; word-wrap: break-word; margin: 0px 10px 9px; padding: 5px; font-family: helvetica, arial, sans-serif; font-weight: 400; font-size: 13px; top: 1px; right: 1px; bottom: 1px; left: 1px; background-color: rgb(255, 255, 255);')
+                                                                                    input.value(type='text', style='position: relative; outline: 0px; background: transparent;')
+                                                                                a.remove-link
+                                                                                    i.fa.fa-trash
+                                                                        ul.unstyled
+                                                                            li.kvp-102
+                                                                                i.key-value-icon.key-icon
+                                                                                .textoverlay-wrapper(style='margin: 0px; padding: 0px; overflow: hidden; display: inline-block; position: relative;')
+                                                                                    .textoverlay(style='position: absolute; color: transparent; white-space: nowrap; word-wrap: break-word; margin: 0px 10px 9px; padding: 5px; font-family: helvetica, arial, sans-serif; font-weight: 400; font-size: 13px; top: 1px; right: 1px; bottom: 1px; left: 1px; background-color: rgb(255, 255, 255);')
+                                                                                    input.key(type='text', style='position: relative; outline: 0px; background: transparent;')
+                                                                                i.key-value-icon.fa.fa-arrow-circle-right.fa-fw
+                                                                                .textoverlay-wrapper(style='margin: 0px; padding: 0px; overflow: hidden; display: inline-block; position: relative;')
+                                                                                    .textoverlay(style='position: absolute; color: transparent; white-space: nowrap; word-wrap: break-word; margin: 0px 10px 9px; padding: 5px; font-family: helvetica, arial, sans-serif; font-weight: 400; font-size: 13px; top: 1px; right: 1px; bottom: 1px; left: 1px; background-color: rgb(255, 255, 255);')
+                                                                                    input.value(type='text', style='position: relative; outline: 0px; background: transparent;')
+                                                                                a.remove-link
+                                                                                    i.fa.fa-trash
+              
+                                    div
+                                        .subsection
+                                            .next-previous-buttons
+                                                button.btn.btn-default
+                                                    i.fa.fa-caret-left
+                                                    | &nbsp;Back
+                                                .btn-group.pull-right
+                                                    span
+                                                        button.btn.campaign-save-draft-btn
+                                                            | Save As Draft
+                                                        a.btn.btn-default
+                                                            i.fa.fa-undo
+                                                            | &nbsp;Revert Schedule
+                                                        button.btn.btn-default.next-step-btn Delivery&nbsp;
+                                                            i.fa.fa-caret-right
+                    #schedule-tab.wizard-tab(style='display: none;')
+                        .row.wizard-step.campaigns-schedule-step
+                            .span12
+                                .shadow-container
+                                    .data-box-header Delivery
+                                    form.data-box.form-horizontal.campaigns-form.wizard-form-1.parsley-bound
+                                        fieldset
+                                            .light-form-alert(style='display: none;')
+                                                p This campaign is currently sending to users in their local time zones and has already been delivered to some users today.
+                                                p Rescheduling this campaign will not stop the current delivery that is already in flight. This means that if you allow users to become re-eligible to receive this campaign and reschedule less than 24 hours into the future, the campaign may resend to users who already received the message today.
+                                                p If you need to stop this campaign entirely, pause or archive it.
+                                                p
+                                                a.btn.btn-danger
+                                                    | Unlock and Edit Schedule
+                                            h3 Choose a Type
+                                            .pretty-label-group
+                                                input.with-pretty-label(type='radio', value='time_based', name="campaign-schedule-70-schedule-type", checked)
+                                                .pretty-label.selected
+                                                    i.fa.fa-3x.fa-clock-o.pull-left
+                                                    h3 Scheduled Delivery
+                                                    | Send at designated times of the day/week
+                                            .pretty-label-group
+                                                input.with-pretty-label(type='radio', value='action_based', name="campaign-schedule-70-schedule-type")
+                                                .pretty-label
+                                                    i.fa.fa-3x.fa-bullseye.pull-left
+                                                    h3 Action-Based Delivery
+                                                    | Send when users perform actions
+                                            .pretty-label-group
+                                                input.with-pretty-label(type='radio', value='api_triggered', name="campaign-schedule-70-schedule-type")
+                                                .pretty-label
+                                                    i.fa.fa-3x.fa-link.pull-left
+                                                    h3 API-Triggered Delivery
+                                                    | Send when you tell us via an API request
+                                            br
+                                            br
+                                            div(style='display:none')
+                                                .divider
+                                                    i.fa.fa-2x.fa-clock-o
+                                                    span Time-Based Scheduling Options
+                                                .option-form.well-form
+                                                    div
+                                                        label.radio.inline.top-button
+                                                            input(name='schedule-time-radio', type='radio', value='immediate')
+                                                            span(data-bind='visible: $root.hasBeenSent()', style='display: none;') Send immediately
+                                                            span(data-bind='visible: !$root.hasBeenSent()') Send as soon as campaign is launched
+                                                    div
+                                                        div
+                                                            label.radio.inline
+                                                                input(name='schedule-time-radio', type='radio', value='scheduled')
+                                                                | Send at a designated time
+                                                            p.radio-button-subtext
+                                                                | Choose an optimal time for users to receive this message.
+                                                        div
+                                                            label.radio.inline
+                                                                input(name='schedule-time-radio', type='radio', value='optimal')
+                                                                | Intelligent Delivery
+                                                            p.radio-button-subtext
+                                                                | Each user will receive the campaign at the time they are most likely to engage. 
+                                                                a(href='#', target='_blank') Learn More
+                                                div
+                                                    div
+                                                        table.campaign-schedule-grid
+                                                            colgroup
+                                                                col(width='82px')
+                                                                col(width='160px')
+                                                                col(width='141px')
+                                                                col(width='275px')
+                                                            tbody
+                                                                tr
+                                                                    td Send
+                                                                    td
+                                                                        select
+                                                                            option(value='Once') Once
+                                                                            option(value='Daily') Daily
+                                                                            option(value='Weekly') Weekly
+                                                                            option(value='Monthly') Monthly
+                                                                    td
+                                                                        | starting at
+                                                                    td
+                                                                        span
+                                                                            select.short-input
+                                                                                option(value='12') 12
+                                                                                option(value='1') 1
+                                                                                option(value='2') 2
+                                                                                option(value='3') 3
+                                                                                option(value='4') 4
+                                                                                option(value='5') 5
+                                                                                option(value='6') 6
+                                                                                option(value='7') 7
+                                                                                option(value='8') 8
+                                                                                option(value='9') 9
+                                                                                option(value='10') 10
+                                                                                option(value='11') 11
+                                                                            &nbsp;
+                                                                            select.short-input
+                                                                                option(value='00') 00
+                                                                                option(value='05') 05
+                                                                                option(value='10') 10
+                                                                                option(value='15') 15
+                                                                                option(value='20') 20
+                                                                                option(value='25') 25
+                                                                                option(value='30') 30
+                                                                                option(value='35') 35
+                                                                                option(value='40') 40
+                                                                                option(value='45') 45
+                                                                                option(value='50') 50
+                                                                                option(value='55') 55
+                                                                            &nbsp;
+                                                                            select.short-input
+                                                                                option am
+                                                                                option pm
+                                                                tr(style='display: none;')
+                                                                    td Every
+                                                                    td
+                                                                    td
+                                                                tr(style='display: none;')
+                                                                    td
+                                                                    td On the days
+                                                                    td(colspan='2')
+                                                                        .weekly-schedule-days.checkbox-append
+                                                                            label.checkbox-append
+                                                                                input(type='checkbox', name='schedule-editor-73sun')
+                                                                                | Sun
+                                                                            label.checkbox-append
+                                                                                input(type='checkbox', name='schedule-editor-73mon')
+                                                                                | Mon
+                                                                            label.checkbox-append
+                                                                                input(type='checkbox', name='schedule-editor-73tue')
+                                                                                | Tue
+                                                                            label.checkbox-append
+                                                                                input(type='checkbox', name='schedule-editor-73wed')
+                                                                                | Wed
+                                                                            label.checkbox-append
+                                                                                input(type='checkbox', name='schedule-editor-73thu')
+                                                                                | Thu
+                                                                            label.checkbox-append
+                                                                                input(type='checkbox', name='schedule-editor-73fri')
+                                                                                | Fri
+                                                                            label.checkbox-append
+                                                                                input(type='checkbox', name='schedule-editor-73sat')
+                                                                                | Sat
+                                                                        .weekday-warning
+                                                                            strong Select at least one day of the week
+                                                                tr
+                                                                    td
+                                                                        span(style='display: none;') Beginning
+                                                                        span On
+                                                                    td
+                                                                        input.required.datewithtoday.campaign-datepicker.hasDatepicker.parsley-success(type='text')
+                                                        hr.simple-rule
+                                                        .schedule-form-item
+                                                            label.optional-form-label
+                                                                input(type='checkbox', name='schedule-editor-73local')
+                                                                | Send campaign to users in their local time zone
+                                                            .form-message
+                                                                | Users must remain in the targeted segment for a full 24 hours to ensure message delivery.
+                                                    .schedule-form-item
+                                                        label.optional-form-label
+                                                            input(type='checkbox', name='match-more-than-once')
+                                                            | Allow users to become re-eligible to receive campaign
+                                                        .form-message
+                                                            .light-form-alert
+                                                                | Appboy will send messages according to your message variant distribution each time users become re-eligible.
+                                                                | As a result, users may receive different message variants than they received on prior sends.
+                                                                | In order to preserve the integrity of a historical control group if distributions change, you cannot use a control group with this option.
+                                                            br
+                                                            | After a user is messaged by this campaign, allow them to become re-eligible to receive the campaign again in
+                                                            &nbsp;
+                                                            input.numeric(type='text')
+                                                            &nbsp;
+                                                            select.re-trigger-multiplier
+                                                                option(value='60') minutes
+                                                                option(value='86400') days
+                                                                option(value='604800') weeks
+                                                                option(value='2592000') months
+                                                    .schedule-form-item
+                                                        label.optional-form-label
+                                                            input(type='checkbox', name='ignore-global-rate-limits')
+                                                            | Ignore frequency capping settings for this campaign
+                                                        .form-message
+                                                            strong Note
+                                                            | : receiving this campaign will still count towards frequency capping other campaigns
+                                            div.trigger-schedule
+                                                .divider
+                                                    i.fa.fa-2x.fa-bullseye
+                                                    span Action-Based Scheduling Options
+                                                h3 Send This Campaign To Users Who
+                                                .ad-hoc-filter
+                                                    .behavior-header
+                                                    span.title New Trigger Action
+                                                    select
+                                                        option(value='') Select Trigger Type...
+                                                        option(value='PurchasedProduct') Make Purchase
+                                                        option(value='UsedApp') Start Session
+                                                        option(value='PerformedCustomEvent') Perform Custom Event
+                                                        option(value='InteractedWithCampaign') Interact With Campaign
+                                                        option(value='InteractedWithCard') Interact With Card
+                                                        option(value='EnteredGeoFence') Enter a Location
+                                                    button.btn(type='button')
+                                                        i.fa.fa-plus-circle
+                                                        |  Add Trigger
+                                                br
+                                                br
+                                                .data-box-header Schedule Delay
+                                                .data-box
+                                                    label.inline Once trigger event criteria are met, send this campaign
+                                                    &nbsp;
+                                                    select
+                                                        option(value='immediately') immediately
+                                                        option(value='after') after
+                                                        option(value='on the next') on the next
+                                                    &nbsp;
+                                                    select
+                                                        option(value='Sunday') Sunday
+                                                        option(value='Monday') Monday
+                                                        option(value='Tuesday') Tuesday
+                                                        option(value='Wednesday') Wednesday
+                                                        option(value='Thursday') Thursday
+                                                        option(value='Friday') Friday
+                                                        option(value='Saturday') Saturday
+                                                    &nbsp;
+                                                    select
+                                                        option(value='') at
+                                                        option(value='') using Intelligent Delivery
+                                                    &nbsp;
+                                                    span
+                                                        select.short-input
+                                                            option(value='12') 12
+                                                            option(value='1') 1
+                                                            option(value='2') 2
+                                                            option(value='3') 3
+                                                            option(value='4') 4
+                                                            option(value='5') 5
+                                                            option(value='6') 6
+                                                            option(value='7') 7
+                                                            option(value='8') 8
+                                                            option(value='9') 9
+                                                            option(value='10') 10
+                                                            option(value='11') 11
+                                                        &nbsp;
+                                                        select.short-input
+                                                            option(value='00') 00
+                                                            option(value='05') 05
+                                                            option(value='10') 10
+                                                            option(value='15') 15
+                                                            option(value='20') 20
+                                                            option(value='25') 25
+                                                            option(value='30') 30
+                                                            option(value='35') 35
+                                                            option(value='40') 40
+                                                            option(value='45') 45
+                                                            option(value='50') 50
+                                                            option(value='55') 55
+                                                        &nbsp;
+                                                        select.short-input
+                                                            option am
+                                                            option pm
+                                                    div
+                                                        hr
+                                                        br
+                                                        div
+                                                            div
+                                                        .ad-hoc-filter
+                                                            .behavior-header
+                                                                span.title Unless The User
+                                                                select
+                                                                    option(value='') Select Exception... (Optional)
+                                                                    option(value='PurchasedProduct') Makes Purchase
+                                                                    option(value='UsedApp') Session Start
+                                                                    option(value='PerformedConversion') Performs Conversion Event
+                                                                    option(value='PerformedCustomEvent') Performs Custom Event
+                                                                    option(value='InteractedWithCampaign') Interacts With Campaign
+                                                                    option(value='InteractedWithCard') Interacts With Card
+                                                                    option(value='EnteredGeoFence') Enters a Location
+                                                                button.btn(type='button')
+                                                                    i.fa.fa-plus-circle
+                                                                    |  Add Exception
+                                                .data-box-header Campaign Duration
+                                                .data-box
+                                                    .time-window-inputs
+                                                        div
+                                                            .time-window-controls
+                                                                .timezone-helptext
+                                                                    strong Time zone: 
+                                                                    span Jakarta
+                                                                .time-block
+                                                                    label.start-time Start Time (Required)
+                                                                    span
+                                                                        input.datepicker.short-datepicker(type='text')
+                                                                        strong &nbsp;at
+                                                                        &nbsp;
+                                                                        select.short-input.hour
+                                                                            option(value='12') 12
+                                                                            option(value='1') 1
+                                                                            option(value='2') 2
+                                                                            option(value='3', selected='') 3
+                                                                            option(value='4') 4
+                                                                            option(value='5') 5
+                                                                            option(value='6') 6
+                                                                            option(value='7') 7
+                                                                            option(value='8') 8
+                                                                            option(value='9') 9
+                                                                            option(value='10') 10
+                                                                            option(value='11') 11
+                                                                        &nbsp;
+                                                                        select.short-input.minute
+                                                                            option(value='0', selected='') 00
+                                                                            option(value='5') 05
+                                                                            option(value='10') 10
+                                                                            option(value='15') 15
+                                                                            option(value='20') 20
+                                                                            option(value='25') 25
+                                                                            option(value='30') 30
+                                                                            option(value='35') 35
+                                                                            option(value='40') 40
+                                                                            option(value='45') 45
+                                                                            option(value='50') 50
+                                                                            option(value='55') 55
+                                                                        &nbsp;
+                                                                        select.short-input.am-pm
+                                                                            option am
+                                                                            option pm
+                                                                .time-block
+                                                                    label.checkbox
+                                                                        input(type='checkbox')
+                                                                        | End Time (Optional)
+                                                                    span
+                                                                        input.datepicker.short-datepicker(type='text')
+                                                                        strong &nbsp;at
+                                                                        &nbsp;
+                                                                        select.short-input.hour
+                                                                            option(value='12') 12
+                                                                            option(value='1') 1
+                                                                            option(value='2') 2
+                                                                            option(value='3', selected='') 3
+                                                                            option(value='4') 4
+                                                                            option(value='5') 5
+                                                                            option(value='6') 6
+                                                                            option(value='7') 7
+                                                                            option(value='8') 8
+                                                                            option(value='9') 9
+                                                                            option(value='10') 10
+                                                                            option(value='11') 11
+                                                                        &nbsp;
+                                                                        select.short-input.minute
+                                                                            option(value='0', selected='') 00
+                                                                            option(value='5') 05
+                                                                            option(value='10') 10
+                                                                            option(value='15') 15
+                                                                            option(value='20') 20
+                                                                            option(value='25') 25
+                                                                            option(value='30') 30
+                                                                            option(value='35') 35
+                                                                            option(value='40') 40
+                                                                            option(value='45') 45
+                                                                            option(value='50') 50
+                                                                            option(value='55') 55
+                                                                        &nbsp;
+                                                                        select.short-input.am-pm
+                                                                            option am
+                                                                            option pm
+                                                        hr
+                                                        label.checkbox
+                                                            input(type='checkbox', name='local-delivery')
+                                                            | Send campaign to users in their local time zone
+                                                .schedule-form-item
+                                                    label.optional-form-label
+                                                        input(type='checkbox', name='quiet-time-controls-62-has-quiet-time')
+                                                        | Only send this campaign during a specific portion of the day
+                                                    .form-message
+                                                        | Between&nbsp;
+                                                        span
+                                                            select.short-input
+                                                                option(value='12') 12
+                                                                option(value='1') 1
+                                                                option(value='2') 2
+                                                                option(value='3') 3
+                                                                option(value='4') 4
+                                                                option(value='5') 5
+                                                                option(value='6') 6
+                                                                option(value='7') 7
+                                                                option(value='8') 8
+                                                                option(value='9') 9
+                                                                option(value='10') 10
+                                                                option(value='11') 11
+                                                            &nbsp;
+                                                            select.short-input
+                                                                option(value='00') 00
+                                                                option(value='05') 05
+                                                                option(value='10') 10
+                                                                option(value='15') 15
+                                                                option(value='20') 20
+                                                                option(value='25') 25
+                                                                option(value='30') 30
+                                                                option(value='35') 35
+                                                                option(value='40') 40
+                                                                option(value='45') 45
+                                                                option(value='50') 50
+                                                                option(value='55') 55
+                                                            &nbsp;
+                                                            select.short-input
+                                                                option am
+                                                                option pm
+                                                        | &nbsp;and&nbsp;
+                                                        span
+                                                            select.short-input
+                                                                option(value='12') 12
+                                                                option(value='1') 1
+                                                                option(value='2') 2
+                                                                option(value='3') 3
+                                                                option(value='4') 4
+                                                                option(value='5') 5
+                                                                option(value='6') 6
+                                                                option(value='7') 7
+                                                                option(value='8') 8
+                                                                option(value='9') 9
+                                                                option(value='10') 10
+                                                                option(value='11') 11
+                                                            &nbsp;
+                                                            select.short-input
+                                                                option(value='00') 00
+                                                                option(value='05') 05
+                                                                option(value='10') 10
+                                                                option(value='15') 15
+                                                                option(value='20') 20
+                                                                option(value='25') 25
+                                                                option(value='30') 30
+                                                                option(value='35') 35
+                                                                option(value='40') 40
+                                                                option(value='45') 45
+                                                                option(value='50') 50
+                                                                option(value='55') 55
+                                                            &nbsp;
+                                                            select.short-input
+                                                                option am
+                                                                option pm
+                                                        |&nbsp;in the user's local time
+                                                        label.optional-form-label
+                                                            input(type='checkbox', name='quiet-time-controls-62-send-after-quiet-time')
+                                                            | Send at the next available time if the delivery time falls outside the specified portion of the day
+                                                .schedule-form-item
+                                                    label.optional-form-label
+                                                        input(type='checkbox', name='match-more-than-once')
+                                                        | Allow users to become re-eligible to receive campaign
+                                                    .form-message
+                                                        .light-form-alert
+                                                            | Appboy will send messages according to your message variant distribution each time users become re-eligible.
+                                                            | As a result, users may receive different message variants than they received on prior sends.
+                                                            | In order to preserve the integrity of a historical control group if distributions change, you cannot use a control group with this option.
+                                                        br
+                                                        | After a user is messaged by this campaign, allow them to become re-eligible to receive the campaign again in&nbsp;
+                                                        input.numeric(type='text')
+                                                        &nbsp;
+                                                        select.re-trigger-multiplier
+                                                            option(value='60') minutes
+                                                            option(value='86400') days
+                                                            option(value='604800') weeks
+                                                            option(value='2592000') months
+                                                .schedule-form-item
+                                                    label.optional-form-label
+                                                        input(type='checkbox', name='ignore-global-rate-limits')
+                                                        | Ignore frequency capping settings for this campaign
+                                                    .form-message
+                                                        strong Note
+                                                        | : receiving this campaign will still count towards frequency capping other campaigns
+                                                    
+                    #target-tab.wizard-tab(style='display: none;')
+                        .row.wizard-step.wizard-targeting-step
+                            .span12
+                                .shadow-container
+                                    .data-box-header Targeting Options
+                                    .data-box
+                                        .help-text
+                                            | Target users by choosing multiple segments they must fall into. Further refine your audience by adding additional filters.
+                                        hr
+                                        h3 Target Users By Segment
+                                        .campaign-segments
+                                            .boolean-logic-composer
+                                                .clearfix
+                                                    .current-logic
+                                                        ul.unstyled.disjunctions-list.ko_container
+                                                .disjunction-set-container.creator
+                                                    .plus-icon
+                                                        img(src='https://dashboard.appboy.com/assets/dashboard/segmenter/plus-icon.png')
+                                                    .disjunction-set
+                                                        form.form-inline.add-disjunction-set
+                                                            .ko-template
+                                                                span.new-filter-label Add Segment
+                                                                .new-segment-selector
+                                                                    select.segment-select.target-select(name='segment')
+                                                                        option Volvo
+                                        hr
+                                        h3 Additional Filters
+                                        .ad-hoc-filters
+                                            .boolean-logic-composer
+                                                .clearfix
+                                                    .current-logic
+                                                        ul.unstyled.disjunctions-list
+                                                            li.ui-sortable-handle
+                                                                .disjunction-set-container
+                                                                    .drag-handle.reorderable
+                                                                    ul.disjunction-set
+                                                                        li
+                                                                            .form-inline
+                                                                                div
+                                                                                    span Last Made Purchase
+                                                                                    select.comparison-keys
+                                                                                        option(value='3') after
+                                                                                        option(value='4') less than
+                                                                                        option(value='5') before
+                                                                                        option(value='6') more than
+                                                                                    .filter-template
+                                                                                        span
+                                                                                            input.hasDatepicker(type='text')
+                                                                                        .filter-interval
+                                                                                            &nbsp;
+                                                                                            input(type='text')
+                                                                                            &nbsp;
+                                                                                            select.day-week-dropdown
+                                                                                                option(value='1') days
+                                                                                                option(value='7') weeks
+                                                                                            span &nbsp;ago
+                                                                            .pull-right.delete-item-holder
+                                                                                span
+                                                                                    button.fa.fa-times.delete-item
+                                                                        li
+                                                                            .item-divider-line
+                                                                                hr
+                                                                                .or-text OR
+                                                                            .form-inline
+                                                                                div
+                                                                                    span Last Made Purchase
+                                                                                    select.comparison-keys
+                                                                                        option(value='3') after
+                                                                                        option(value='4') less than
+                                                                                        option(value='5') before
+                                                                                        option(value='6') more than
+                                                                                    .filter-template
+                                                                                        span
+                                                                                            input.hasDatepicker(type='text')
+                                                                                        .filter-interval
+                                                                                            &nbsp;
+                                                                                            input(type='text')
+                                                                                            &nbsp;
+                                                                                            select.day-week-dropdown
+                                                                                                option(value='1') days
+                                                                                                option(value='7') weeks
+                                                                                            span &nbsp;ago
+                                                                            .pull-right.delete-item-holder
+                                                                                button.btn.btn-teal.clearfix
+                                                                                    i.fa.fa-plus-circle
+                                                                                    | OR
+                                                                                span
+                                                                                    button.fa.fa-times.delete-item
+                                                                .disjunction-set-stats-holder
+                                                                    .pipe-divider
+                                                                        .disjunction-set-connector
+                                                                        .disjunction-set-connector.operator AND
+                                                                        .disjunction-set-connector
+                                                .disjunction-set-container.creator
+                                                    .plus-icon
+                                                        img(src='/images/plus-icon.png')
+                                                    .disjunction-set
+                                                        form.form-inline.add-disjunction-set
+                                                            div
+                                                                i.fa.fa-filter
+                                                                span.new-filter-label &nbsp;Add Filter
+                                                                select.filter-selector
+                                                                    option Custom Attributes
+                                        hr
+                                        div
+                                            form.option-form.no-margin
+                                                br
+                                                fieldset
+                                                    label.advanced-options-label
+                                                        span Send to
+                                                        &nbsp;
+                                                        select
+                                                            option(value='1') users who are subscribed or opted-in
+                                                            option(value='2') opted-in users only
+                                                            option(value='0') all users including unsubscribed users
+                                                    .advanced-options-item
+                                                        label.checkbox
+                                                            input(type='checkbox', name='has-recipients-limit')
+                                                            | Limit the number of people who will receive this campaign
+                                                        .form-message
+                                                            select.max-recipients-global
+                                                                option(value='') In total, this campaign should
+                                                                option(value='') Every time this campaign is scheduled,
+                                                            .after-select-text
+                                                                | &nbsp;message a maximum of&nbsp;
+                                                                input.limit-number-of-people-to-receive(type='text')
+                                                                | &nbsp;users
+                                                    .advanced-options-item
+                                                        label.checkbox
+                                                            input(type='checkbox', name='has-time-rate-limit')
+                                                            | Limit the rate at which this campaign will send
+                                                        .form-message
+                                                            select.time-rate-limit
+                                                                option(value='') Select a rate limit...
+                                                                option(value='50') 50
+                                                                option(value='100') 100
+                                                                option(value='500') 500
+                                                                option(value='1000') 1.000
+                                                                option(value='2500') 2.500
+                                                                option(value='5000') 5.000
+                                                                option(value='10000') 10.000
+                                                                option(value='25000') 25.000
+                                                                option(value='50000') 50.000
+                                                                option(value='100000') 100.000
+                                                                option(value='250000') 250.000
+                                                                option(value='500000') 500.000
+                                                            .after-select-text
+                                                                | &nbsp;messages per minute
+                    #conversion-tab.wizard-tab(style='display: none;')
+                        .row.wizard-step
+                            .span12
+                                .shadow-container
+                                    .data-box-header.clearfix
+                                        .pull-left
+                                            | Assign Conversion Event
+                                    .data-box.no-margin
+                                        .subsection.conversion-behavior
+                                            form
+                                                fieldset
+                                                    .subsection.conversion-filter
+                                                        div
+                                                            span
+                                                                | Define a user conversion event to track for this campaign.  The conversion event must be assigned during Campaign creation, and cannot be changed once a Campaign has launched.
+                                                            hr
+                                                            h3 Choose Conversion Event Type
+                                                            select
+                                                                option(value='TrackedUserBehavior::UsedApp') Session Start
+                                                                option(value='TrackedUserBehavior::PurchasedProduct') Makes Purchase
+                                                                option(value='TrackedUserBehavior::PerformedCustomEvent') Performs Custom Event
+                                                        hr
+                                                        div
+                                                            h3 Record Conversions for Users Who
+                                                            div
+                                                                span
+                                                                    label
+                                                                        input(type='checkbox')
+                                                                        | Track sessions for any app
+                                            hr
+                                            form
+                                                fieldset
+                                                    div
+                                                        h3 Set Conversion Deadline
+                                                        | The maximum amount of time that may pass between a user receiving a Campaign and performing the assigned action for it to be considered a conversion.
+                                                        br
+                                                        br
+                                                        input.numeric(type='text', value='5')
+                                                        &nbsp;
+                                                        select#campaign-conversions-12-conversion-multiplier
+                                                            option(value='60') minutes
+                                                            option(value='3600') hours
+                                                            option(value='86400') days
+                                                        p.light-form-alert(data-bind='visible: !$parent.messages().isMultichannel()')
+                                                            i.fa.fa-warning
+                                                            | We will not begin computing winner confidence, and Intelligent Selection won't adjust variant traffic, until the initial conversion deadline ends.
+                    #confirm-tab.wizard-tab(style='display: none;')
+                        .row.wizard-step.campaign-confirm-page
+                            .span12
+                                .shadow-container
+                                    .data-box-header
+                                        | Messages
+                                        span.pull-right
+                                            a.unchanged-notice View Details
+                                            span.label Not Updated
+                                        span.pull-right
+                                            span.label.label-success Updated
+                                    .data-box
+                                        .message-platform.push-confirm
+                                            .header
+                                                h3
+                                                    span Variant 1
+                                                    |  Preview
+                                            .body
+                                                .message-composition
+                                                    .push-message-area.web-push-message-area
+                                                        .web-push-chrome-preview.web-push-preview
+                                                            img.web-push-desktop-background(width='452px', src='/images/Web_Push_Wire2x.png')
+                                                            article
+                                                                table
+                                                                    colgroup
+                                                                        col(width='105px')
+                                                                        col(width='250px')
+                                                                        col
+                                                                    tbody
+                                                                        tr
+                                                                            td
+                                                                                img.chrome-left-image(src='https://appboy-images.com/appboy/communication/marketing/web_push_message_variations/images/573d3224dfc3b443ee58e5e3/7baaa91ff21bad06faa23080e22d86b43127fe5c/sixty_by_sixty.png?1463649863')
+                                                                            td
+                                                                                .chrome-title(data-bind='text: webTitle') DEMO APPBOY
+                                                                                .chrome-b(data-bind='text: webPushMessage') xin chào, rất vui được gặp lại các bạn
+                                                                                .chrome-via
+                                                                                    | example.com
+                                                                            td
+                                                                                .chrome-x x
+
+    block script
+        script(type='text/javascript').
+            $('.wizard-navigation-step').click(function(){
+                $(this).parent().prevAll().removeClass().addClass('completed');
+                $(this).parent().nextAll().removeClass().addClass('future');
+                $(this).parent().removeClass().addClass('current');
+                $(this).parent().next().addClass('next');
+                var tab = '#' + $(this).data("href");
+                $('.wizard-tab').not(tab).hide();
+                $(tab).fadeIn();
+            });
+
+            //compose-tab
+            $('.message-preview-area .panels i').click(function(){
+                $(this).addClass('selected');
+                $(this).siblings().removeClass("selected");
+                var tab = '.' + $(this).data("href");
+                $('.message-preview-area .web-push-preview').not(tab).hide();
+                $(tab).fadeIn();
+            });
+            
+            $('.preview-option-dropdown').change(function(){
+                if($(this).val() == 'windows')
+                    $('.firefox-windows').show();
+                else
+                    $('.firefox-windows').hide();
+            });
+
+            $('.uri-type').change(function(){
+                if($(this).val() == 'URI')
+                    $('.web-custom-uri').attr('placeholder','Example: https://www.example.com').show();
+                else if($(this).val() == 'DEEP_LINK')
+                    $('.web-custom-uri').attr('placeholder','Example: myapp://deeplink').show();
+                else
+                    $('.web-custom-uri').hide();
+            });
+
+            $('.message-composition-area .panels i').click(function(){
+                $(this).addClass('selected');
+                $(this).siblings().removeClass("selected");
+                var tab = '.' + $(this).data("href");
+                $('.message-composition-area .web-push-setting').not(tab).hide();
+                $(tab).fadeIn();
+            });
+
+            //schedule-tab
+            $('#schedule-tab .pretty-label-group').click(function(){
+                $(this).find('.with-pretty-label').prop('checked',true);
+                $('#schedule-tab .pretty-label').removeClass("selected");
+                $(this).find('.pretty-label').addClass('selected');
+            });

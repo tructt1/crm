@@ -1,0 +1,113 @@
+﻿doctype html
+html
+  head
+    title= CRM
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    link(rel='stylesheet', href='/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://fast.fonts.net/cssapi/4641fbbf-01bc-4e91-832b-9e48a5685249.css')
+    link(rel='stylesheet', href='https://fast.fonts.net/cssapi/09c5f801-0d37-479d-aea3-ca82d9180c1e.css')
+    link(rel='stylesheet', href='/stylesheets/theme.css')
+    link(rel='stylesheet', href='/stylesheets/crm.css')
+    link(rel='stylesheet', media='screen', href='/lib/jquery-ui-1.11.4/jquery-ui.css')
+    link(rel='shortcut icon', type='image/x-icon', href='https://dashboard.appboy.com/assets/favicon-90375f9ffd0d9e6e704b83f1a7c5efd9a408d649000e569f94a8d8f716fd7eb9.ico')
+  body
+    #body-wrapper
+        header.navbar.navbar-inverse.navbar-fixed-top.shadowed
+            a.push-state(href='/dashboard')
+                #main-icon
+            .container
+                .page-header
+                    h1
+                        span Campaigns
+                ul.nav.pull-right
+                    li.dropdown
+                        a#account-drop.dropdown-toggle(href='#', data-toggle='dropdown')
+                            img.profile-image(width='45', height='45', src='https://s3.amazonaws.com/appboy-developer-profile-images/developers/images/573bd93515a5f70dbdaad60f/97b7bfef19b5c7317d4d70ba2ef298b815437c7a/sixty_by_sixty.png?1463540021')
+                            span.profile-text
+                                span.profile-name Vin Mobile
+                            i.toggle-symbol.fa.fa-angle-down.fa-lg
+                        #account-drop-menu.dropdown-menu(role='menu', aria-labelledby='account-drop')
+                            ul
+                                li
+                                    a.push-state(href='/company_settings/account_settings')
+                                        i.fa.fa-fw.fa-cogs
+                                        span Account Settings
+                                    a.push-state(href='/company_settings/company_settings')
+                                        i.fa.fa-fw.fa-building-o
+                                        span Company Settings
+                                    a.push-state(href='/company_settings/manage_users')
+                                        i.fa.fa-fw.fa-user
+                                        span Manage Users
+                                li.sign-off
+                                    a(href='/developers/sign_out', data-method='delete', rel='nofollow')
+                                        i.fa.fa-power-off.fa-fw
+                                        | Sign Out
+        #main
+            .content.container
+                #main-row.row
+                    #side-col.span3.section-navigator
+                        #app-group-selector.dropdown
+                            #current-app-group.dropdown-toggle.list-item(data-toggle='dropdown')
+                                #app-group-info
+                                    img.icon(width='35', height='35', src='https://s3.amazonaws.com/appboy-dashboard-uploads/news/default-news-image.png')
+                                    #app-group-names
+                                        .company-name Vin mobile
+                                        .app-name truc
+                                        i.app-group-arrow.fa.fa-angle-down.fa-lg
+                                        i.app-group-arrow.fa.fa-angle-up.fa-lg
+                            ul#app-groups-list.dropdown-menu(role='menu', aria-labelledby='current-app-group')
+                                li.segregated
+                                    a
+                                        span
+                                            i.fa.fa-plus-circle.fa-fw(title='New App Group')
+                                            | New App Group
+                                li.list-item.selected
+                                    a.push-state(href='#', title='truc')
+                                        img.icon(width='30', height='30', src='https://s3.amazonaws.com/appboy-dashboard-uploads/news/default-news-image.png')
+                                        span.app-name truc
+                                li.list-item
+                                    a.push-state(href='#', title='VinMobileApp')
+                                        img.icon(width='30', height='30', src='https://s3.amazonaws.com/appboy-dashboard-uploads/news/default-news-image.png')
+                                        span.app-name VinMobileApp
+                                li.list-item
+                                    a.push-state(href='#', title='VinMobileWeb')
+                                        img.icon(width='30', height='30', src='https://s3.amazonaws.com/appboy-dashboard-uploads/news/default-news-image.png')
+                                        span.app-name VinMobileWeb
+                            a#add-first-app(style='display:none')
+                                span
+                                    i.fa.fa-plus-circle.fa-fw(title='Add App Group')
+                                    |  Add App Group
+                        #sidebar-expand.sidebar-full
+                            .sidebar-tab
+                                a.push-state(href='/engagement')
+                                    .section-header
+                                        span Engagement
+                            ul.inset-navlist
+                                li.list-item
+                                    a.push-state
+                                        .section.selected
+                                            span.badge.section-badge(style='display: none') 0
+                                            span.section-name Campaigns
+                                        .sidebar-pill-toggle
+                                            i.fa.fa-angle-right.fa-large(style='display: none;')
+                                            i.fa.fa-angle-down.fa-large
+                                    ul.inset-inset-navlist
+                                        li.list-item.selected
+                                            a.push-state(href='#')
+                                                span.sidebar-pill-name All Campaigns
+                                        li.list-item
+                                            a.push-state(href='#')
+                                                span.sidebar-pill-name Email Templates
+                                        li.list-item
+                                            a.push-state(href='#')
+                                                span.sidebar-pill-name Global Campaign Settings
+                                        li.list-item
+                                            a.push-state(href='#')
+                                                span.sidebar-pill-name Calendar
+                    #main-col.span12
+                        block content
+    script(src='/javascripts/jquery-2.2.3.js')
+    script(src='/javascripts/jquery-migrate-1.3.0.js')
+    script(src='/lib/jquery-ui-1.11.4/jquery-ui.js')
+    block script
